@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>slider</title>
+	<style type="text/css">
+		a{
+			margin: 10px;
+			text-decoration: none;
+		}
+		section{
+			position: relative;
+			margin-top: 50px;
+			width: 300px;
+			height: 400px;
+			overflow: hidden;
+		}
+		section img{
+			position: absolute;
+			width: 100%;
+			height: auto;
+			opacity: 0;
+			transition:opacity 1s linear;
+		}
+		section img:first-child{
+			opacity: 1;
+		}
+		section img:target{
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<a href="#i1">01</a>
+		<a href="#i2">02</a>
+		<a href="#i3">03</a>
+		<a href="#i4">04</a>
+	</div>
+	<section>
+		<img src="https://wx2.sinaimg.cn/mw690/b7beb7b2gy1fpi0oh6f7pj20qo0goafp.jpg" alt="" id="i1">
+		<img src="https://wx1.sinaimg.cn/mw690/b7beb7b2gy1fpcr28tly1j20ox0zkwno.jpg" alt="" id="i2">
+		<img src="https://wx4.sinaimg.cn/mw690/b7beb7b2gy1fo1p6s0mg5j20hs0h1dun.jpg" alt="" id="i3">
+		<img src="https://wx4.sinaimg.cn/mw690/b7beb7b2gy1fnlk1s11igj20hs0h4k8m.jpg" alt="" id="i4">
+	</section>
+</body>
+<!-- 一个页面只能有一个target
+ -->
+ </html>
+

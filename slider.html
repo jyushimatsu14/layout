@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.slider{
+			position: relative;
+			margin: 100px auto;
+			width: 300px;
+			height: 300px;
+		}
+		.slider > div.slide{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			opacity: 0;
+			transition: opacity 1s linear;
+		}
+		.slider > div.slide img{
+			width: 100%;
+			height: 100%;
+		}
+		input{
+			position: relative;
+			z-index: 8
+		}
+		input:checked + * + * + div.slide{
+			opacity: 1
+
+		}
+		.slider .buttons{
+			display: none;
+		}
+		
+		input:checked + * + * + * + * + * + div.buttons{
+			display: block;
+		}
+		.slider .prev,
+		.slider .next{
+			position: absolute;
+			text-align: center;
+			width: 35px;
+			height: 20px;
+			line-height: 20px;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			background-color: rgba(255,255,255,0.5);
+		}
+		.slider .prev{
+			left: 0;
+		}
+		.slider .next{
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<section class="slider">
+		<input type="radio" name="slider" id="i1" checked>
+		<input type="radio" name="slider" id="i2">
+		<input type="radio" name="slider" id="i3">
+		<div class="slide">
+			<img src="https://wx4.sinaimg.cn/mw690/b7beb7b2gy1fnlk1s11igj20hs0h4k8m.jpg" alt="">
+		</div>
+		<div class="slide">
+			<img src="https://wx4.sinaimg.cn/mw690/b7beb7b2gy1fo1p6s0mg5j20hs0h1dun.jpg" alt="">
+		</div>
+		<div class="slide">
+			<img src="https://wx2.sinaimg.cn/mw690/b7beb7b2gy1fpi0oh6f7pj20qo0goafp.jpg" alt="">
+		</div>
+		<div class="buttons">
+		<label for="i3" class="prev">prev</label>
+		<label for="i2" class="next">next</label>
+		</div>
+		<div class="buttons">
+		<label for="i1" class="prev">prev</label>
+		<label for="i3" class="next">next</label>
+		</div>
+		<div class="buttons">
+		<label for="i2" class="prev">prev</label>
+		<label for="i1" class="next">next</label>
+		</div>
+	</section>
+</body>
+</html>

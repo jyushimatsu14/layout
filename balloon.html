@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{
+			background-color: rgba(224,248,223,0.3);
+		}
+		button{
+			display: block;
+			margin: 90px auto;
+			padding: 10px;
+			background-color: #e01909;
+			border: none;
+			border-radius: 5px;
+			color: white;
+		}
+		[data-balloon]{
+			position: relative;
+		}
+		[data-balloon]::before{
+			content: attr(data-balloon);
+			position: absolute;
+			box-sizing: border-box;
+			background-color: black;
+			padding: 6px 12px;
+			border-radius: 5px;
+		}
+
+
+		[data-balloon-pos="up"]::after,
+		[data-balloon-pos="down"]::after,
+		[data-balloon-pos="up"]::before,
+		[data-balloon-pos="down"]::before{
+			left: 50%;
+			transform: translate(-50%,0);
+		}
+
+
+		[data-balloon-pos="right"]::after,
+		[data-balloon-pos="left"]::after,
+		[data-balloon-pos="right"]::before,
+		[data-balloon-pos="left"]::before{
+			top: 50%;
+			transform: translate(0,-50%);
+		}
+		[data-balloon]::before,
+		[data-balloon]::after{
+			opacity: 0
+		}
+		[data-balloon]:hover::before,
+		[data-balloon]:hover::after{
+			opacity: 1;
+			transition:opacity 1s;
+		}
+
+		[data-balloon-pos="up"]::before{
+			bottom: 100%;
+			margin-bottom:8px;
+		}
+		[data-balloon-pos="down"]::before{
+			margin-top: 8px;
+			top: 100%;
+		}
+		[data-balloon-pos="right"]::before{
+			margin-left: 8px;
+			left: 100%;
+		}
+		[data-balloon-pos="left"]::before{
+			margin-right: 8px;
+			right: 100%; 
+		}
+		[data-balloon-size="small"]::before{
+			width: 80px;
+		}
+		[data-balloon-size="medium"]::before{
+			width: 150px;
+		}
+		[data-balloon-size="fit"]::before{
+			width: 100%;
+		}
+
+		[data-balloon]::after{
+			content: '';
+			position: absolute;
+			width: 0;
+			height: 0;
+			border: 4px solid transparent;
+		}
+		[data-balloon-pos="up"]::after{
+			border-top-color: black;
+			bottom: 100%;
+		}
+		[data-balloon-pos="down"]::after{
+			border-bottom-color: black;
+			top: 100%;
+		}
+		[data-balloon-pos="left"]::after{
+			border-left-color: black;
+			right: 100%;
+		}
+		[data-balloon-pos="right"]::after{
+			border-right-color: black;
+			left: 100%;
+		}
+	</style>
+</head>
+<body>
+	<button data-balloon="the content" data-balloon-pos="up">Hover hover Me <br>UP</button>
+	<button data-balloon="the content" data-balloon-pos="down">Hover hover Me <br>DOWN</button>
+	<button data-balloon="the content" data-balloon-pos="left">Hover hover Me <br>LEFT</button>
+	<button data-balloon="the content" data-balloon-pos="right">Hover hover Me <br>RIGHT</button>
+	<button data-balloon="the content" data-balloon-pos="up" data-balloon-size="small">Hover hover Me <br>UP and SMALL</button>
+	<button data-balloon="the content" data-balloon-pos="down" data-balloon-size="medium">Hover hover Me<br>DOWN and MEDIUM</button>
+	<button data-balloon="the content" data-balloon-pos="up" data-balloon-size="fit">Hover hover Me <br>LEFT and FIT</button>
+	<button data-balloon="the content" data-balloon-pos="down" data-balloon-size="small">Hover hover Me<br>RIGHT and SMALL</button>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
